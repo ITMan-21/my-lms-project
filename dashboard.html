@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body class="bg-slate-900 text-white min-h-screen">
+    <div class="p-8">
+        <header class="mb-10 flex justify-between items-center">
+            <h1 class="text-3xl font-bold italic text-indigo-400">Student Portal</h1>
+            <a href="index.html" class="text-gray-400 hover:text-white">Sign Out</a>
+        </header>
+
+        <div class="grid grid-cols-1 xl:grid-cols-2 gap-8">
+            <div data-aos="fade-up" class="bg-white/5 border border-white/10 rounded-2xl p-6 shadow-xl">
+                <h3 class="text-lg font-medium mb-4 text-indigo-300">Learning Resources</h3>
+                <iframe src="https://drive.google.com/embeddedfolderview?id=1tQ2qITyWumeZbtG8A1d2lwJ9Y_t1wNM5#list" class="w-full h-[500px] rounded-lg border-0"></iframe>
+            </div>
+
+            <div data-aos="fade-up" data-aos-delay="200" class="bg-white/5 border border-white/10 rounded-2xl p-6 shadow-xl">
+                <h3 class="text-lg font-medium mb-4 text-pink-300">Gemini AI Tutor</h3>
+                <iframe src="https://gemini.google.com/gem/1GHpFTnd2zgG1_fEHlKjW5Lg28zYqQ5JO?usp=sharing" class="w-full h-[500px] rounded-lg border-0"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init();</script>
+</body>
+</html>

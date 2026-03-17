@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LMS Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-900 text-white flex items-center justify-center h-screen">
+    <div class="p-10 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl text-center shadow-2xl w-96">
+        <h1 class="text-3xl font-bold mb-6 italic">LMS Portal</h1>
+        <input type="password" id="passInput" placeholder="Enter Student Password" class="w-full p-3 rounded bg-black/30 border border-white/10 mb-4 text-center focus:outline-none focus:border-indigo-500">
+        <button onclick="checkPass()" class="bg-indigo-600 hover:bg-indigo-500 w-full py-3 rounded-full font-bold transition-all">
+            Access Dashboard
+        </button>
+        <p id="errorMsg" class="text-red-400 mt-4 text-sm hidden">Incorrect password. Try again.</p>
+    </div>
+
+    <script>
+        function checkPass() {
+            const pass = document.getElementById('passInput').value;
+            // You can change this password to whatever you like!
+            if (pass === "study2026") {
+                window.location.href = 'dashboard.html';
+            } else {
+                document.getElementById('errorMsg').classList.remove('hidden');
+            }
+        }
+    </script>
+</body>
+</html>
