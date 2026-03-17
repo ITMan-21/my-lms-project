@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Dashboard</title>
+	<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
@@ -22,26 +23,44 @@
 
             <div data-aos="fade-up" data-aos-delay="200" class="bg-white/5 border border-white/10 rounded-2xl p-6 shadow-xl">
                 <h3 class="text-lg font-medium mb-4 text-pink-300">Gemini AI Tutor</h3>
-                <div data-aos="fade-up" data-aos-delay="200" class="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 shadow-xl flex flex-col items-center justify-center text-center h-[500px]">
-    <h3 class="text-lg font-medium mb-4 text-pink-300">Gemini AI Tutor</h3>
+                <div data-aos="zoom-in" data-aos-delay="300" class="group bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 shadow-2xl transition-all duration-500 hover:bg-white/10 hover:border-pink-500/50 flex flex-col items-center justify-center text-center h-[550px] relative overflow-hidden">
     
-    <div class="mb-6 text-pink-500">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-20 w-20 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-        </svg>
+    <div class="absolute -top-24 -right-24 w-48 h-48 bg-pink-600/20 blur-3xl rounded-full group-hover:bg-pink-600/40 transition-all duration-700"></div>
+
+    <h3 class="text-2xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-pink-300 to-indigo-300">Gemini AI Tutor</h3>
+    
+    <div class="mb-8 animate-bounce">
+        <div class="p-6 bg-gradient-to-tr from-pink-500 to-indigo-600 rounded-full shadow-[0_0_30px_rgba(219,39,119,0.5)]">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+        </div>
     </div>
 
-    <p class="text-gray-400 mb-6 px-4">Click below to launch your personal AI tutor in a secure window.</p>
+    <p class="text-gray-300 mb-8 max-w-xs leading-relaxed">Your personal study companion is ready. Launch the tutor to start a live session.</p>
     
-    <a href="https://gemini.google.com/gem/1GHpFTnd2zgG1_fEHlKjW5Lg28zYqQ5JO?usp=sharing" target="_blank" class="bg-gradient-to-r from-pink-600 to-indigo-600 hover:from-pink-500 hover:to-indigo-500 px-10 py-4 rounded-full font-bold shadow-lg transition-transform hover:scale-105">
-        Launch AI Tutor 🚀
-    </a>
-	</div>
+    <button onclick="launchTutor()" class="relative inline-flex items-center justify-center px-10 py-4 font-bold text-white transition-all duration-200 bg-indigo-600 font-pj rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 animate-pulse hover:animate-none group-hover:scale-110">
+        Launch Tutor 🚀
+    </button>
+</div>
 			</div>
         </div>
     </div>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>AOS.init();</script>
+    <script>AOS.init();function launchTutor() {
+    // 1. Fire the Confetti!
+    confetti({
+        particleCount: 150,
+        spread: 70,
+        origin: { y: 0.6 },
+        colors: ['#6366f1', '#a855f7', '#ec4899']
+    });
+
+    // 2. Wait a split second for the animation to be seen, then open Gemini
+    setTimeout(() => {
+        window.open("https://gemini.google.com/gem/1GHpFTnd2zgG1_fEHlKjW5Lg28zYqQ5JO?usp=sharing", "_blank");
+    }, 600);
+}</script>
 </body>
 </html>
